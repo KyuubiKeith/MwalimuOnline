@@ -1,41 +1,36 @@
-﻿@model MwalimuOnline.Models.RegisterViewModel
-@{
-    ViewBag.Title = "Register";
+﻿@section Title {
+    <title>Register | Mwalimu Online</title>
 }
+@section Element{
 
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    <div class="col-lg-5 col-md-12 offset-lg-1 slideDown">
+        <div class="card-plain">
+            <div class="header">
+                <h5>Sign Up</h5>
+                <span>Register a new membership</span>
+            </div>
+            <form class="form">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter User Name">
+                    <span class="input-group-addon"><i class="zmdi zmdi-account-circle"></i></span>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter Email">
+                    <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" class="form-control" />
+                    <span class="input-group-addon"><i class="zmdi zmdi-lock"></i></span>
+                </div>
+                <div class="checkbox">
+                    <input id="terms" type="checkbox">
+                    <label for="terms">I read and Agree to the <a href="javascript:void(0);">Terms of Usage</a></label>
+                </div>
+            </form>
+            <div class="footer">
+                <a href="index.html" class="btn btn-primary btn-round btn-block">SIGN UP</a>
+            </div>
+            <a class="link" href="@Url.Action("Login", "Account")">You already have a membership?</a>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }
