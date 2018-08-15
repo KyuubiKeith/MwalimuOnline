@@ -475,6 +475,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_GeneralLayout.cshtml" />
     <Content Include="Views\Shared\_RegistryLayout.cshtml" />
+    <Content Include="Views\Home\Profile.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
